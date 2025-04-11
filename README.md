@@ -1,4 +1,4 @@
-- is called 'notes app'
+- it is called 'notes app android'
 - a better name would be 'expense event logger' :)
 - stopped there to continue with something more dynamic
 
