@@ -70,8 +70,9 @@ dependencies {
 
     implementation("androidx.room:room-runtime:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
-    //implementation("androidx.room:room-ktx:$roomVersion")
-    //ksp("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
 }
 
 

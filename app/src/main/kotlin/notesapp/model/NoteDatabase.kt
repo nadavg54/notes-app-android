@@ -6,9 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.notesapp.model.Note
 
-@Database(entities = [Note::class], version = 1)
+
+@Database(entities = [Note::class, ExpenseEventEntity::class], version = 2)
 abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
+    abstract fun expenseEventDao(): ExpenseEventDao
 
     companion object {
         @Volatile
@@ -20,7 +22,9 @@ abstract class NoteDatabase : RoomDatabase() {
                     context.applicationContext,
                     NoteDatabase::class.java,
                     "note_database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration() // Optional: avoids crashes during schema changes
+                    .build()
                 INSTANCE = instance
                 instance
             }
